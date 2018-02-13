@@ -5,12 +5,16 @@ import org.springframework.stereotype.Component;
 
 import com.sat.persistlayer.PalindromeWord;
 import com.sat.persistlayer.PalindromeWordRepository;
+import com.sat.serl.CaptchaService;
 
 @Component
 public class Palindrome {
 
 	@Autowired
-	private PalindromeWordRepository palindromeWordRepository; 
+	private PalindromeWordRepository palindromeWordRepository;
+	
+	@Autowired
+	private CaptchaService captchaService;
 	
 	public boolean check(String enteredWord) {
 		char[] splitWordArr = enteredWord.toCharArray();
